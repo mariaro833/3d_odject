@@ -7,9 +7,9 @@
 
 typedef struct s_object
 {
-	int	height;
-	int	diameter;
-	int	width;
+	float	height;
+	float	diameter;
+	float	width;
 }	t_object;
 
 void	input_checker(t_object *object);

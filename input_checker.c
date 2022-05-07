@@ -33,7 +33,7 @@ void	input_checker(t_object *object)
 		while (object->diameter == 0 )
 		{
 			printf("Print the diameter of the Object (min 80cm and max 500cm): ");
-			scanf("%d", &object->diameter);
+			scanf("%f", &object->diameter);
 			if (object->diameter < 80 || object->diameter > 500)
 				object->diameter = 0;
 		}
@@ -42,7 +42,7 @@ void	input_checker(t_object *object)
 			min_height = (object->diameter < 100) ? 100 : object->diameter;
 			max_height = (object->diameter * 1.5 > 500) ? 500 : object->diameter * 1.5;
 			printf("Print the hieght of the Object, (min %d cm, max %d cm): ", min_height, max_height);
-			scanf("%d", &object->height);
+			scanf("%f", &object->height);
 			if (object->height < min_height || object->height > max_height)
 			{
 				object->height = 0;
