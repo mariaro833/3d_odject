@@ -4,11 +4,12 @@ Task: Program a parametrically driven geometrical object for robotic 3D-printing
 
 Object: cylinder that could be utilized as a manhole, water tank, silo
 
-Project assignment
-
 The target: A visualization of the parametric model with a set of interactive parameters (numerical sliders).
 
 Arguments: object height, object diameter, width of a printed layer.
+- Height: min 100 cm, max 500 cm. Diameter: min 80 cm, max 500 cm
+- Ratio between height and diameter is in the range 1-1 to 1-1.5. As one parameter changes, the second changes too in the given ratio.
+- Width of a printed layer is in a range 3 cm - 6 cm
 
 Conditions:
 Once height or diameter of the cylinder is more than 150 cm, the surface of the
@@ -38,13 +39,13 @@ Bottom of the object.
 Offset for the  inner cylinder
 According to the condition of the assignment,the offset is 3-6 cm and depends on the size of the subject. 
 So it was introduced the follows direct dependence of the offset on the diameter of the object:
-if (diameter >= 80 && diameter < 220)
+- if (diameter >= 80 && diameter < 220)
 	width = 3;
-if (diameter >= 220 && diameter < 360)
+- if (diameter >= 220 && diameter < 360)
         width = 4;
-if (diameter >= 360 && diameter < 500)
-        width = 5;
-if (diameter == 500)
+- if (diameter >= 360 && diameter < 500)
+	width = 5;
+- if (diameter == 500)
         width = 6;
 
 Inner cylinder
