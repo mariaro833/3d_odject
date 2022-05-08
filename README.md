@@ -65,4 +65,6 @@ zigzag_height is equals offset;
 zigzag_step_angle = 10 grad
 
 <details><summary>2. Visualization of the result</summary>
+	
+Visualisation was implemented with Java Script with .paper, THREE, GUI 
   
