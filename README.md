@@ -30,7 +30,7 @@ The project implementation consists of two parts:
 1. Calculation of the parameters.
 
 Part 1 was implemented with C language
-How to use:
+- How to use:
 ```c
 git clone https://github.com/mariaro833/3d_odject.git task
 gcc *.c
