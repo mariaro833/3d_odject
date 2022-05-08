@@ -29,7 +29,15 @@ The project implementation consists of two parts:
 
 1. Calculation of the parameters.
 
-Part 1 was implemented with C language and there was calculated the parameters for the constituent parts of an object.
+Part 1 was implemented with C language
+How to use:
+```c
+git clone https://github.com/mariaro833/3d_odject.git task
+gcc *.c
+./a.out
+```
+
+Here was calculated the parameters for the constituent parts of an object.
 
 Bottom of the object.
 - There was added the bottom of the object with the following parameters:
