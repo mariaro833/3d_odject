@@ -67,4 +67,5 @@ zigzag_step_angle = 10 grad
 <details><summary>2. Visualization of the result</summary>
 	
 Visualisation was implemented with Java Script with .paper, THREE, GUI 
+[![Watch the video](https://github.com/mariaro833/3d_odject/blob/main/js_cylinder/Visual_3D.png)](https://youtu.be/-DsvtNjt48I)
   
