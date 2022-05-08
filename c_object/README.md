@@ -33,8 +33,8 @@ Part 1 was implemented with C language and there was calculated the parameters f
 
 Bottom of the object.
 - There was added the bottom of the object with the follows parameters:
-	height_b is equal to the width of a printed layer;
-	diameter_b is equal to the diameter of the Object.
+	height of the buttom is equal to the width of a printed layer;
+	diameter of the buttom is equal to the diameter of the Object.
 
 Offset for the  inner cylinder
 - According to the condition of the assignment,the offset is 3-6 cm and depends on the size of the subject. 
@@ -48,15 +48,21 @@ So it was introduced the follows direct dependence of the offset on the diameter
 - if (diameter == 500)
         width = 6;
 
+Outer cylinder
+- The diameter of the outer cylinder is equal to:
+(diameter of the Object) minus (width of a printed layer).
+- The height of the outer cylinder is equal to:
+(height of the Object) minus (height of the Buttom)
+					
 Inner cylinder
 - The diameter of the inner cylinder is equal to: 
-diameter of the Object - width of a printed layer for the outer cylinder -  2 * offset -  width of a printed layer for the inner cylinder. 
-The width of a printed layer for both cylinders are taken into account.
+(diameter of the Object) minus (2 * width of a printed layer) minus (2 * offset). 
+- The width of a printed layer for both cylinders are taken into account.
 
 Zigzag
 - For zigzag parameters, it was assumed that the zigzag does not need to be superimposed on the outer and inner cylinders.
 zigzag_height is equals offset;
-zigzag_step = 2pi
+zigzag_step_angle = 10 grad
 
 <details><summary>2. Visualization of the result</summary>
   
