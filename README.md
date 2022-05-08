@@ -33,6 +33,7 @@ Part 1 was implemented with C language
 - How to use:
 ```c
 git clone https://github.com/mariaro833/3d_odject.git task
+cd task/c_object
 gcc *.c
 ./a.out
 ```
