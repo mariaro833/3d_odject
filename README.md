@@ -29,7 +29,16 @@ The project implementation consists of two parts:
 
 1. Calculation of the parameters.
 
-Part 1 was implemented with C language and there was calculated the parameters for the constituent parts of an object.
+Part 1 was implemented with C language
+- How to use:
+```c
+git clone https://github.com/mariaro833/3d_odject.git task
+cd task/c_object
+gcc *.c
+./a.out
+```
+
+Here was calculated the parameters for the constituent parts of an object.
 
 Bottom of the object.
 - There was added the bottom of the object with the following parameters:
@@ -67,4 +76,5 @@ zigzag_step_angle = 10 grad
 <details><summary>2. Visualization of the result</summary>
 	
 Visualisation was implemented with Java Script with .paper, THREE, GUI 
+[![Watch the video](https://github.com/mariaro833/3d_odject/blob/main/js_cylinder/Visual_3D.png)](https://youtu.be/-DsvtNjt48I)
   
