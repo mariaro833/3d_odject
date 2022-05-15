@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Mansalva&display=swap');
+h1 {
+	color: orange;
+	text-align: center;
+	font-size: 30px;
+	font-family: 'Mansalva', cursive;
+}
+
+p, li {
+	color: orange;
+}
+
+li {
+	text-align: left;
+	font-size: 14px;
+	font-family: 'Mansalva', cursive;
+}
+
+p {
+	text-align: left;
+	font-size: 19px;
+	font-family: 'Mansalva', cursive;
+}
+
+.special {
+	color: orange;
+	text-align: left;
+	font-size: 19px;
+	font-family: 'Mansalva', cursive;
+}
+
+p span, li em {
+	color: rebeccapurple;
+  }
+
+/* h1 + p {
+	font-size: 200%;
+} */
+
+a:link {
+	color: blue;
+}
+
+a:visited {
+color: rgb(50, 50, 103);
+} */
+
+/* a:hover {
+	text-decoration: none;
+} */
+
+/* p,
+ul {
+  border: 2px solid rebeccapurple;
+  padding: .5em;
+} */
+
+
+input, button {
+	font-size: 16px;
+	padding: 4px 8px;
+	border: 1px solid #efefef
+	border-radius: 3px;
+	margin-top: 12px;
+	color: black;
+	text-align: center;
+	font-size: 12px;
+	font-family: 'Mansalva', cursive;
+  }
+
+  button {
+	display: block;
+	/* font-size: 16px;
+	padding: 4px 8px;
+	border: 1px solid #efefef
+	border-radius: 3px;
+	margin-top: 12px;
+	color: black;
+	text-align: center;
+	font-size: 19px;
+	font-family: 'Mansalva', cursive; */
+  }
+
+  div {
+	padding: 16px;
+  }
+
+  h2 {
+	font-family: Tahoma;
+	margin: 0;
+  }
