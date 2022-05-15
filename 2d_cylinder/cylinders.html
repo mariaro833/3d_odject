@@ -19,16 +19,15 @@
 
 <p class="special">
 	Diameter: <input type="number" id="diameter" value="200"><br>
-<!-- D2: <input type="number" id="radius2" value="180"><br> -->
-	Height: <input type="number" id="height1" value="200"><br>
-	Width_of_the_layer: <input type="number" id="width_l" value="3"></p><br>
+	Height: <input type="number" id="height" value="200"><br>
+	Width_of_the_layer: <input type="number" id="width_l" value="3"><br><br>
+	Zigzag, number of segments: <input type="number" id="segments" value="21"><br>
+	Rotation: <input type="number" id="alpha1" value=0><br>
+	</p>
 
-<h3 class="special">Calculated parameters:</h3>
+<!-- <h3 class="special">Calculated parameters:</h3>
 
-segments: <input type="number" id="segments" value="21"><br><br>
-
-scale: <input type="number" id="scale" value=1.0>
-alpha: <input type="number" id="alpha1" value=0><br>
+scale: <input type="number" id="scale" value=1.0> -->
 
 <p>
 <button onclick="updateMyCanvas()">Update</button>
@@ -46,16 +45,39 @@ function  updateMyCanvas() {
 	context.clearRect(0, 0, canvas.width, canvas.height)
 
 	let diameter = document.getElementById("diameter").value
-	let h = document.getElementById("height1").value
+	let h = document.getElementById("height").value
 
-	var scale = document.getElementById("scale").value
+	/* height of the Object input checker */
+	let min_h
+	if (diameter < 100) {
+		min_h = 100
+	}
+	if (diameter >= 100) {
+		min_h = diameter
+	}
+	let max_h
+	if (diameter * 1.5 > 500) {
+		max_h = 500;
+	}
+	else {
+		max_h = diameter * 1.5
+	}
+
+	if (h < min_h || h > max_h)
+	{
+		h = prompt("Ration of height to diameter is 1:1 - 1:1.5", min_h)
+		if (h > min_h && h < max_h) alert (right)
+	}
+	document.getElementById("height").value = h
+
+	var scale = 1
 	if (scale < 0.1) {
 		scale = 0.1
-		document.getElementById("scale").value = 0.1
+		// document.getElementById("scale").value = 0.1
 	}
 	if (h >= 300 || diameter >= 300) {
 		scale = 0.4
-		document.getElementById("scale").value = 0.6
+		// document.getElementById("scale").value = 0.6
 	}
 
 	let alpha1 = document.getElementById("alpha1").value
@@ -64,23 +86,12 @@ function  updateMyCanvas() {
 	let radius1 = (diameter / 2 - 3) * scale
 	h1 = h * scale
 
-	// let offset
-	// let radius2
-	// if (h1 < 150 || radius1 < 75) {
-	// 		offset = 0;
-	// 		radius2 = 0;
-	// 		h2 = 0;
-	// 	}
-	// else {
-	// 	offset = h1 * 0.04;
-	// 	radius2 = radius1 - offset - width_l
-	// }
-
 	let alpha2 = alpha1
 	let center2 = center1
 	let radius2
 	let width_l
 
+	/* Width of the layer calculation depending on the diameter od the Object */
 	if (diameter >= 80 && diameter < 220)
 		width_l = 3;
 	if (diameter >= 220 && diameter < 360)
@@ -90,9 +101,12 @@ function  updateMyCanvas() {
 	if (diameter == 500)
 		width_l = 6;
 
+	/* Offset calculation depending on the diameter of the Object */
+	let offset = h1 * 0.04;
+
+	/* Radius and height for the second cylinder calculations */
 	if (h >= 150 && (diameter >= 150)) {
-		radius2 = radius1 - h1 * 0.04 - width_l
-	// let radius2 = document.getElementById("radius2").value * scale
+		radius2 = radius1 - offset - width_l
 		h2 = h1
 	}
 
@@ -187,6 +201,15 @@ function draw2Ellipse(ctx, center, sizes, sizes2, sector, angle, color, segments
 }
 
 </script>
+
+<h3 class="special">Calculated parameters:</h3>
+
+		<p class="special">
+			Cylinder 1 <br>
+			Diameter: <input type="number" id="diameter1" value="diameter1"><br>
+			scale: <input type="number" id="scale" value=1.0>
+<p>
+
 </body>
 </html>
 
