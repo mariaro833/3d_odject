@@ -10,9 +10,9 @@
 
 	<h1>GEOMETRICAL OBJECT FOR ROBOTIC 3D-PRINTING <br> 2D-model</h1><br>
 
-	<h2 class="special">Arguments.<br>Please specify the parameters for the geometrical object:<span> diameter, height, width of the layer </span></h2>
+	<h2>Arguments.<br>Please specify the parameters for the geometrical object:<span> diameter, height, width of the layer </span></h2>
 
-	<p class="special">
+	<p>
 		Diameter: <input type="number" id="diameter" value="80"><br>
 		Height: <input type="number" id="height" value="100"><br>
 		Width_of_the_layer: <input type="number" id="width_l" value="3"><br><br>
@@ -22,32 +22,40 @@
 
 	<p><button onclick="updateMyCanvas()">Update</button></p>
 
+	<h3>Calculated parameters:</h3>
 
+	<p>
+		Cylinder 1,
+		diameter: <input type="text" id="diameter1" value="diameter1"><br><br>
 
-	<h3 class="special">Calculated parameters:</h3>
+		Cylinder 2,
+		diameter: <input type="text" id="diameter2" value="diameter2"><br><br>
 
-	<p class="special">
-		Cylinder 1
-		Diameter: <input type="number" id="diameter1" value="diameter1"><br><br>
-		<!-- Height 1: <input type="number" id="height1" value="h1"><br><br> -->
-
-		Cylinder 2
-		Diameter: <input type="number" id="diameter2" value="diameter2"><br><br>
-		<!-- Height 2: <input type="number" id="height2" value="h2"><br><br> -->
-		<!-- scale: <input type="number" id="scale" value=1.0> -->
-
-		Offset: <input type="number" id="offset" value="offset"><br><br>
+		Offset: <input type="text" id="offset" value="offset"><br><br>
 	<p>
 
-	<canvas id="myCanvas" width="500" height="500" style="border:1px solid #ffccff;">
-		Your browser does not support the canvas element.</canvas>
-	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.14/paper-full.min.js"></script>
+	<canvas id="myCanvas" width="500" height="500" style="border:1px solid orange;">
+		Error: Browser does not supports the canvas element.</canvas>
+	<script type="text/javascript">
+
+		var myCanvas = document.getElementById("myCanvas");
+		var render = myCanvas.getContext("2d");
+		myCanvas.width = 550;
+		myCanvas.height = 550;
+		myCanvas.style.left = "100px";
+		myCanvas.style.top = "100px";
+		myCanvas.style.position = "absolute";
+	</script>
 
 <script>
 
 	var canvas = document.getElementById("myCanvas");
 	var context = canvas.getContext("2d");
+		canvas.width = 550;
+		canvas.height = 550;
+		canvas.style.left = "900px";
+		canvas.style.top = "140px";
+		canvas.style.position = "absolute";
 
 	updateMyCanvas()
 
@@ -96,7 +104,7 @@
 
 		/* input checker for the rotation */
 		let alpha1 = document.getElementById("alpha1").value
-		let center1 = [250,200]
+		let center1 = [275,150]
 
 		let alpha2 = alpha1
 		let center2 = center1
@@ -128,7 +136,7 @@
 		}
 		document.getElementById("diameter2").value = diameter2
 		document.getElementById("offset").value = offset
-		
+
 		let h2 = h1
 		let radius1 = diameter1 / 2 * scale
 		let radius2 = diameter2 / 2 * scale
@@ -138,13 +146,13 @@
 			document.getElementById("segments").value = 0;
 		// draw2Ellipse(context, [200,200], [100,50], [50,25], [0, Math.PI*2], alpha1,'green')
 
-		drawCylinder(context, center1, radius1, h1,  alpha1, 'blue')
+		drawCylinder(context, center1, radius1, h1,  alpha1, 'rgb(0, 149, 255)')
 		if (h >= 150 && (diameter >= 150)) {
 		drawCylinder(context, center2, radius2, h2,  alpha2, 'orange')
 		draw2Ellipse(context, center1,
 			[radius1,radius1*scaleAxis],
 			[radius2,radius2*scaleAxis],
-			[0, Math.PI*2], alpha1,'blue',segments)
+			[0, Math.PI*2], alpha1,'rgb(0, 149, 255)',segments)
 		}
 	}
 
