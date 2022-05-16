@@ -27,6 +27,10 @@ ul, li {
 	font-family: 'Mansalva', cursive;
 }
 
+.special {
+	color:rgb(133, 229, 233);
+}
+
 a:link {
 	color: blue;
 }

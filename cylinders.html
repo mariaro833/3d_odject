@@ -20,7 +20,7 @@
 		Width_of_the_layer: <input type="number" id="width_l" value="3"><br><br>
 		Zigzag, number of segments: <input type="number" id="segments" value="8"><br>
 		Rotation: <input type="number" id="alpha1" value="0"><br>
-		scale: <input type="number" id="scale" value="1.0"></p>
+
 
 	<p><button onclick="updateMyCanvas()">Update</button></p>
 
@@ -30,10 +30,12 @@
 		<li>Cylinder 1,
 		diameter: <input type="text" id="diameter1" value="diameter1"></li>
 
-		</li>Cylinder 2,
+		<li>Cylinder 2,
 		diameter: <input type="text" id="diameter2" value="diameter2"><br></li>
 
 		<li>Offset: <input type="text" id="offset" value="offset"><br></li>
+
+		<li class="special">scale: <input type="number" id="scale" value="1.0"></li>
 	<ul>
 
 	<canvas id="myCanvas" style="border:1px solid orange;">
@@ -83,8 +85,11 @@
 		var scale = document.getElementById("scale").value;
 		if (scale < 0.1)
 			scale = 0.1;
-		if (h >= 300 || diameter >= 300)
-			scale = 0.4;
+		if (h >= 300 || diameter >= 300) {
+			scale = 0.4; } else
+		{
+			scale = 1.0;
+		}
 		document.getElementById("scale").value = scale;
 		/* input checker for the rotation */
 		let alpha1 = document.getElementById("alpha1").value;
