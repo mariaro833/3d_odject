@@ -8,7 +8,7 @@
 
 <body>
 
-	<h1>GEOMETRICAL OBJECT FOR ROBOTIC 3D-PRINTING <br> 2D-model</h1><br>
+	<h1>GEOMETRICAL OBJECT FOR ROBOTIC 3D-PRINTING<br>2D-model<br></h1>
 
 	<h2>Arguments.<br>Please specify the parameters for the geometrical object:<span> diameter, height, width of the layer </span></h2>
 
@@ -137,8 +137,8 @@
 		let radius2 = diameter2 / 2 * scale;
 
 		let segments = document.getElementById("segments").value;
-		if (diameter1 == 0)
-			document.getElementById("segments").value = 0;
+		// if (diameter1 == 0)
+		// 	document.getElementById("segments").value = 0;
 
 		drawCylinder(context, center1, radius1, h1,  alpha1, 'rgb(0, 34, 255)');
 		if (h >= 150 && (diameter >= 150)) {
@@ -156,6 +156,7 @@
 		drawEllipse(context, [center[0]-h * Math.sin(angle),center[1] + h * Math.cos(angle)],[r,r * scaleAxis], [0, Math.PI], angle, color);
 		ctx.beginPath();
 
+<<<<<<< HEAD
 		let left = [center[0] - r * Math.cos(angle),center[1]-r * Math.sin(angle)];
 		ctx.moveTo(left[0],left[1]);
 		ctx.lineTo(left[0] - h * Math.sin(angle), left[1] + h * Math.cos(angle));
@@ -163,6 +164,15 @@
 		let right = [center[0] + r * Math.cos(angle),center[1] + r * Math.sin(angle)];
 		ctx.moveTo(right[0],right[1]);
 		ctx.lineTo(right[0] - h * Math.sin(angle),right[1] + h * Math.cos(angle));
+=======
+		let left = [center[0]-r*Math.cos(angle),center[1]-r * Math.sin(angle)];
+		ctx.moveTo(left[0],left[1]);
+		ctx.lineTo(left[0]-h*Math.sin(angle),left[1]+h * Math.cos(angle));
+
+		let right = [center[0]+r * Math.cos(angle),center[1]+r * Math.sin(angle)];
+		ctx.moveTo(right[0],right[1]);
+		ctx.lineTo(right[0]-h * Math.sin(angle),right[1]+h * Math.cos(angle));
+>>>>>>> 4911f1280b879c3636cc8e88803cedce392d9763
 
 		ctx.stroke();
 		ctx.closePath();
