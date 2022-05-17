@@ -23,7 +23,7 @@ generated between them. Infill geometry is zigzag.
 
 Project implementation:
 
-The project implemented with JS language
+The project implemented on JS.
 
 At first, the parameters for the constituent parts of an object was calculated.
 
@@ -52,3 +52,8 @@ Inner cylinder
 Zigzag
 - For zigzag parameters, it was assumed that the zigzag does not need to be superimposed on the outer and inner cylinders.
 So zigzag draws according to the number of segments, wich specified as the argument.
+
+You can change the height and width of an object. Also, zigzag parameters are adjusted in the "Zigzag, number of segments" field.
+The zigzag is reflected as a line, I did not extend the lines to the entire height of the cylinder, as they do not look very pretty.
+
+I added the "scale" parameter, it shows the current display scale of the object.
