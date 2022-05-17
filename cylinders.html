@@ -56,7 +56,7 @@
 		let diameter = document.getElementById("diameter").value
 
 		/* input checker for diameter of the Object */
-		if (diameter < 80 || diameter > 500) {
+		while (diameter < 80 || diameter > 500) {
 			diameter = prompt ("Specify the diameter of the Object in the range from 80 to 500", 200)
 		}
 		document.getElementById("diameter").value = diameter
@@ -64,25 +64,25 @@
 		let h = document.getElementById("height").value
 
 		/* input checker for the height of the Object */
-	if (diameter < 100) {
-		min_h = 100
-	}
-	if (diameter >= 100) {
-		min_h = diameter
-	}
-	let max_h
-	if (diameter * 1.5 > 500) {
-		max_h = 500;
-	}
-	else {
-		max_h = diameter * 1.5
-	}
-	if (h < min_h || h > max_h)
-	{
-		h = prompt("Ration of height to diameter is 1:1 - 1:1.5", min_h)
-		if (h > min_h && h < max_h) alert (right)
-	}
-	document.getElementById("height").value = h
+		if (diameter < 100) {
+			min_h = 100
+		}
+		if (diameter >= 100) {
+			min_h = diameter
+		}
+		let max_h
+		if (diameter * 1.5 > 500) {
+			max_h = 500;
+		}
+		else {
+			max_h = diameter * 1.5
+		}
+		while (h < min_h || h > max_h)
+		{
+			h = prompt("Ration of height to diameter is 1:1 - 1:1.5", min_h)
+			if (h > min_h && h < max_h) alert (right)
+		}
+		document.getElementById("height").value = h
 
 		/* scale calculations depending on the Object's size */
 		var scale = document.getElementById("scale").value;
@@ -112,7 +112,8 @@
 			width_ex = 5;
 		if (diameter == 500)
 			width_ex = 6;
-		if (width_l != width_ex) prompt ("Width of the layer depends on the size of the Object. Recommendation for the actual size:", width_ex)
+		if (width_l != width_ex)
+			prompt ("Width of the layer depends on the size of the Object. Recommendation for the actual size:", width_ex)
 		document.getElementById("width_l").value = width_ex;
 
 		let diameter1 = diameter - width_ex;
