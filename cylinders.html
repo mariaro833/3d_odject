@@ -4,8 +4,6 @@
     <meta charset="utf-8">
 	<title>Cylinder 2D-model</title>
 	<link rel="stylesheet" href="styles.css">
-	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.14/paper-full.min.js"></script>
 </head>
 
 <body>
@@ -15,12 +13,11 @@
 	<h2>Arguments.<br>Please specify the parameters for the geometrical object:<span> diameter, height, width of the layer </span></h2>
 
 	<p>
-		Diameter: <input type="number" id="diameter" value="200"><br>
-		Height: <input type="number" id="height" value="200"><br>
+		Diameter: <input type="number" id="diameter" value="80"><br>
+		Height: <input type="number" id="height" value="100"><br>
 		Width_of_the_layer: <input type="number" id="width_l" value="3"><br><br>
 		Zigzag, number of segments: <input type="number" id="segments" value="8"><br>
-		Rotation: <input type="number" id="alpha1" value="0"><br>
-
+		Rotation: <input type="number" id="alpha1" value="0"><br></p>
 
 	<p><button onclick="updateMyCanvas()">Update</button></p>
 
@@ -49,7 +46,6 @@
 		canvas.style.left = "600px";
 		canvas.style.top = "240px";
 		canvas.style.position = "absolute";
-
 	updateMyCanvas()
 
 	function  updateMyCanvas() {
@@ -67,24 +63,25 @@
 		let h = document.getElementById("height").value
 
 		/* input checker for the height of the Object */
-		let min_h
-		if (diameter < 100) {
-			min_h = 100;
-		}
-		if (diameter >= 100) {
-			min_h = diameter;
-		}
-		let max_h;
-		if (diameter * 1.5 > 500) {
-			max_h = 500;
-		}
-		else {
-			max_h = diameter * 1.5;
-		}
-		if (h < min_h || h > max_h) {
-			h = prompt("Ration of height to diameter is 1:1 - 1:1.5", min_h);
-		}
-		document.getElementById("height").value = h;
+	if (diameter < 100) {
+		min_h = 100
+	}
+	if (diameter >= 100) {
+		min_h = diameter
+	}
+	let max_h
+	if (diameter * 1.5 > 500) {
+		max_h = 500;
+	}
+	else {
+		max_h = diameter * 1.5
+	}
+	if (h < min_h || h > max_h)
+	{
+		h = prompt("Ration of height to diameter is 1:1 - 1:1.5", min_h)
+		if (h > min_h && h < max_h) alert (right)
+	}
+	document.getElementById("height").value = h
 
 		/* scale calculations depending on the Object's size */
 		var scale = document.getElementById("scale").value;
