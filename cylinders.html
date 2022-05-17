@@ -43,7 +43,7 @@
 	var context = canvas.getContext("2d");
 		canvas.width = 450;
 		canvas.height = 450;
-		canvas.style.left = "600px";
+		canvas.style.left = "480px";
 		canvas.style.top = "240px";
 		canvas.style.position = "absolute";
 
@@ -88,9 +88,11 @@
 		var scale = document.getElementById("scale").value;
 		if (scale < 0.1)
 			scale = 0.1;
-		if (h >= 300 || diameter >= 300) {
-			scale = 0.4; } else
-		{
+		if (h >= 200 && h <= 300 ) {
+			scale = 0.5; }
+		else if (h > 300) {
+			scale = 0.4; }
+		else {
 			scale = 1.0;
 		}
 		document.getElementById("scale").value = scale;
@@ -135,32 +137,32 @@
 		let radius2 = diameter2 / 2 * scale;
 
 		let segments = document.getElementById("segments").value;
-		if (diameter1 == 0)
-			document.getElementById("segments").value = 0;
+		// if (diameter1 == 0)
+		// 	document.getElementById("segments").value = 0;
 
 		drawCylinder(context, center1, radius1, h1,  alpha1, 'rgb(0, 34, 255)');
 		if (h >= 150 && (diameter >= 150)) {
-		drawCylinder(context, center2, radius2, h2,  alpha2, 'orange');
-		draw2Ellipse(context, center1,
-			[radius1,radius1*scaleAxis],
-			[radius2,radius2*scaleAxis],
-			[0, Math.PI*2], alpha1,'rgb(0, 34, 255)',segments);
+			drawCylinder(context, center2, radius2, h2,  alpha2, 'orange');
+			draw2Ellipse(context, center1,
+			[radius1,radius1 * scaleAxis],
+			[radius2,radius2 * scaleAxis],
+			[0, Math.PI * 2], alpha1,'rgb(0, 34, 255)', segments);
 		}
 	}
 
 	function drawCylinder(ctx, center, r, h, angle, color, segments) {
 		scaleAxis = 0.45;
-		drawEllipse(context, center,[r,r*scaleAxis], [0, Math.PI*2], angle, color);
-		drawEllipse(context, [center[0]-h*Math.sin(angle),center[1]+h*Math.cos(angle)],[r,r*scaleAxis], [0, Math.PI], angle, color);
+		drawEllipse(context, center,[r,r * scaleAxis], [0, Math.PI*2], angle, color);
+		drawEllipse(context, [center[0]-h * Math.sin(angle),center[1] + h * Math.cos(angle)],[r,r * scaleAxis], [0, Math.PI], angle, color);
 		ctx.beginPath();
 
-		let left = [center[0]-r*Math.cos(angle),center[1]-r*Math.sin(angle)];
+		let left = [center[0] - r * Math.cos(angle),center[1]-r * Math.sin(angle)];
 		ctx.moveTo(left[0],left[1]);
-		ctx.lineTo(left[0]-h*Math.sin(angle),left[1]+h*Math.cos(angle));
+		ctx.lineTo(left[0] - h * Math.sin(angle), left[1] + h * Math.cos(angle));
 
-		let right = [center[0]+r*Math.cos(angle),center[1]+r*Math.sin(angle)];
+		let right = [center[0] + r * Math.cos(angle),center[1] + r * Math.sin(angle)];
 		ctx.moveTo(right[0],right[1]);
-		ctx.lineTo(right[0]-h*Math.sin(angle),right[1]+h*Math.cos(angle));
+		ctx.lineTo(right[0] - h * Math.sin(angle),right[1] + h * Math.cos(angle));
 
 		ctx.stroke();
 		ctx.closePath();
@@ -208,8 +210,8 @@
 				x = sizes[0] * Math.cos(t);
 				y = sizes[0] * Math.sin(t);
 				ctx.lineTo(x, y);
-				x = sizes2[0] * Math.cos(t+dt/2);
-				y = sizes2[0] * Math.sin(t+dt/2);
+				x = sizes2[0] * Math.cos(t + dt/2);
+				y = sizes2[0] * Math.sin(t + dt/2);
 				ctx.lineTo(x, y);
 			}
 		}
@@ -217,7 +219,7 @@
 		y = sizes[0] * Math.sin(t);
 		ctx.lineTo(x, y);
 
-		ctx.restore();                                  // restore the state, overwise the stroke abd fill will be squashed and rotated
+		ctx.restore();                                  // restore the state, overwise the stroke and fill will be squashed and rotated
 		ctx.strokeStyle = color;
 		ctx.stroke();                                   // encircle
 		ctx.closePath();
