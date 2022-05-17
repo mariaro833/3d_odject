@@ -68,17 +68,22 @@
 
 		/* input checker for the height of the Object */
 		let min_h
-		if (diameter < 100)
+		if (diameter < 100) {
 			min_h = 100;
-		if (diameter >= 100)
+		}
+		if (diameter >= 100) {
 			min_h = diameter;
+		}
 		let max_h;
-		if (diameter * 1.5 > 500)
+		if (diameter * 1.5 > 500) {
 			max_h = 500;
-		else
+		}
+		else {
 			max_h = diameter * 1.5;
-		if (h < min_h || h > max_h)
+		}
+		if (h < min_h || h > max_h) {
 			h = prompt("Ration of height to diameter is 1:1 - 1:1.5", min_h);
+		}
 		document.getElementById("height").value = h;
 
 		/* scale calculations depending on the Object's size */
