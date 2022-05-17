@@ -12,28 +12,28 @@
 
 	<h2>Arguments.<br>Please specify the parameters for the geometrical object:<span> diameter, height, width of the layer </span></h2>
 
-	<p>
+	<p class="special">
 		Diameter: <input type="number" id="diameter" value="80"><br>
 		Height: <input type="number" id="height" value="100"><br>
 		Width_of_the_layer: <input type="number" id="width_l" value="3"><br><br>
 		Zigzag, number of segments: <input type="number" id="segments" value="8"><br>
 		Rotation: <input type="number" id="alpha1" value="0"><br></p>
 
+
 	<p><button onclick="updateMyCanvas()">Update</button></p>
 
 	<h3>Calculated parameters:</h3>
 
-	<ul>
-		<li>Cylinder 1,
-		diameter: <input type="text" id="diameter1" value="diameter1"></li>
+	<p>
+		Cylinder 1,
+		diameter: <input type="text" id="diameter1" value="diameter1"><br>
 
-		<li>Cylinder 2,
-		diameter: <input type="text" id="diameter2" value="diameter2"><br></li>
+		Cylinder 2,
+		diameter: <input type="text" id="diameter2" value="diameter2"><br>
 
-		<li>Offset: <input type="text" id="offset" value="offset"><br></li>
+		Offset: <input type="text" id="offset" value="offset"><br>
 
-		<li class="special">scale: <input type="number" id="scale" value="1.0"></li>
-	<ul>
+		<li>scale: <input type="number" id="scale" value="1.0"><br></li></p>
 
 	<canvas id="myCanvas" style="border:1px solid orange;">
 		Error: Browser does not supports the canvas element.</canvas>
@@ -46,6 +46,7 @@
 		canvas.style.left = "600px";
 		canvas.style.top = "240px";
 		canvas.style.position = "absolute";
+
 	updateMyCanvas()
 
 	function  updateMyCanvas() {

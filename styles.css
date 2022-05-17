@@ -6,29 +6,25 @@ h1 {
 	font-family: 'Mansalva', cursive;
 }
 
-h2, p {
-	color: rgb(0, 149, 255);
+h2, h3 {
+	color: rgb(0, 34, 255);
 	text-align: left;
 	font-size: 19px;
 	font-family: 'Mansalva', cursive;
 }
 
-h3 {
-	color: rgb(255, 170, 0);
+p {
+	color: rgb(60, 153, 224);
 	text-align: left;
 	font-size: 19px;
 	font-family: 'Mansalva', cursive;
 }
 
 ul, li {
-	color: rgb(255, 170, 0);
+	color: rgb(158, 102, 171);
 	text-align: left;
 	font-size: 19px;
 	font-family: 'Mansalva', cursive;
-}
-
-.special {
-	color:rgb(133, 229, 233);
 }
 
 a:link {
