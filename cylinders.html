@@ -137,13 +137,13 @@
 		if (diameter1 == 0)
 			document.getElementById("segments").value = 0;
 
-		drawCylinder(context, center1, radius1, h1,  alpha1, 'rgb(0, 149, 255)');
+		drawCylinder(context, center1, radius1, h1,  alpha1, 'rgb(0, 34, 255)');
 		if (h >= 150 && (diameter >= 150)) {
 		drawCylinder(context, center2, radius2, h2,  alpha2, 'orange');
 		draw2Ellipse(context, center1,
 			[radius1,radius1*scaleAxis],
 			[radius2,radius2*scaleAxis],
-			[0, Math.PI*2], alpha1,'rgb(0, 149, 255)',segments);
+			[0, Math.PI*2], alpha1,'rgb(0, 34, 255)',segments);
 		}
 	}
 
